@@ -1,65 +1,14 @@
-import Image from "next/image";
-
-export default function Home() {
-  return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
-}
+﻿const wa="https://wa.me/51900000000?text=Hola%2C%20quiero%20cotizar%20mi%20p%C3%A1gina%20web";
+const data={plans:[["Landing Page","Convierte campañas en consultas y ventas."],["Tienda Autoadministrable","Tu catálogo abierto y vendiendo 24/7."],["E-commerce Premium","Una solución robusta lista para escalar."]],benefits:["Enfoque en ventas","WhatsApp estratégico","Lista para campañas","Autoadministrable","Velocidad y SEO","Acompañamiento local"],steps:["Consulta y briefing","Estrategia y contenido","Diseño y desarrollo","Lanzamiento y capacitación"]};
+export default function Home(){return <><header><a className="brand" href="#inicio"><i>P</i>Páginas Web <b>Piura</b></a><nav><a href="#servicios">Servicios</a><a href="#beneficios">Beneficios</a><a href="#proceso">Proceso</a><a href="#faq">FAQ</a></nav><a className="btn sm" href={wa}>Empezar proyecto</a></header><main>
+<section className="hero" id="inicio"><div><label>● AGENCIA DIGITAL EN PIURA</label><h1>Páginas web que convierten visitas en <em>clientes reales.</em></h1><p>Diseñamos landing pages y tiendas virtuales rápidas, estratégicas y listas para vender. Tu negocio merece algo más que una web bonita.</p><aside><a className="btn" href={wa}>Quiero mi página web →</a><a className="btn outline" href="#servicios">Ver opciones</a></aside><footer><b>SEO<small>Posicionamiento local</small></b><b>24/7<small>Tu negocio siempre activo</small></b><b>100%<small>Adaptable a móviles</small></b></footer></div><div className="visual"><div className="browser"><span>● ● ●</span><nav><b>NÓRDICA</b><small>Inicio　Tienda　Nosotros</small></nav><article><div><label>NUEVA COLECCIÓN</label><h3>Diseño que inspira tu espacio.</h3><button>Ver colección</button></div><i>◒</i></article></div><div className="phone"><b>NÓRDICA</b><i>◒</i><strong>Diseño que inspira.</strong><button>Comprar</button></div><div className="metric">↗ <small>CONVERSIÓN <b>+42%</b></small></div></div></section>
+<section className="muted problem"><div className="heading"><label>EL PROBLEMA</label><h2>¿Tu página web es un gasto<br/>o una inversión?</h2><p>Tu web debe ser tu mejor vendedor: clara, convincente y disponible todos los días.</p></div><div className="grid three">{[["01","Lenta y desactualizada"],["02","Invisible en Google"],["03","Sin conversiones"]].map(x=><article key={x[0]}><label>{x[0]}</label><h3>{x[1]}</h3><p>Una mala experiencia hace que tus clientes elijan a la competencia.</p></article>)}</div></section>
+<section className="accelerator"><div><label>UNA MEJOR FORMA DE CRECER</label><h2>Acelerador de<br/>Ventas Digitales</h2><p>Un sistema para atraer, convencer y convertir.</p></div><div>{["01  ATRAER","02  CONVENCER","03  CONVERTIR"].map(x=><b key={x}>{x}</b>)}</div></section>
+<section id="servicios"><div className="heading"><label>SERVICIOS</label><h2>Elige la web que tu negocio necesita</h2><p>Soluciones claras para cada etapa de crecimiento.</p></div><div className="grid plans">{data.plans.map((x,i)=><article className={i===1?"featured":""} key={x[0]}>{i===1&&<label>MÁS ELEGIDO</label>}<i>{["LP","EC","PR"][i]}</i><h3>{x[0]}</h3><p>{x[1]}</p><ul><li>✓ Diseño a medida</li><li>✓ WhatsApp integrado</li><li>✓ Optimización SEO</li></ul><a className="btn outline" href={wa}>Cotizar ahora</a></article>)}</div></section>
+<section className="muted" id="beneficios"><div className="heading"><label>POR QUÉ ELEGIRNOS</label><h2>Construimos para obtener resultados</h2></div><div className="grid benefits">{data.benefits.map((x,i)=><article key={x}><i>{["↗","◌","⚡","✎","◎","⌖"][i]}</i><h3>{x}</h3><p>Cada detalle tiene un propósito: hacer que tu negocio sea más fácil de elegir.</p></article>)}</div></section>
+<section className="audience"><div><label>NEGOCIOS QUE IMPULSAMOS</label><h2>Hecho en Piura.<br/>Pensado para crecer.</h2></div><aside>{["Abogados","Clínicas","Restaurantes","Inmobiliarias","Academias","Tiendas y retail"].map(x=><b key={x}>{x}</b>)}</aside></section>
+<section className="process" id="proceso"><div><label>PROCESO SIMPLE</label><h2>Tu nueva web lista en 4 pasos</h2><p>Sin tecnicismos. Siempre sabrás qué viene después.</p></div><aside>{data.steps.map((x,i)=><article key={x}><b>0{i+1}</b><div><h3>{x}</h3><p>Avanzamos contigo con comunicación clara y entregables concretos.</p></div></article>)}</aside></section>
+<section className="muted bento"><article><label>DISEÑO CON PROPÓSITO</label><h2>Moderno, profesional y con identidad local.</h2></article><article><h3>Atención cercana en Piura</h3><p>Acompañamiento real en cada etapa.</p></article><article><h3>Soporte ágil</h3><p>Resolvemos tus dudas sin hacerte esperar.</p></article></section>
+<section className="faq" id="faq"><div><label>PREGUNTAS FRECUENTES</label><h2>Lo que necesitas saber antes de empezar</h2></div><aside>{[["¿Cuánto tarda?","Una landing toma 7–10 días; una tienda, 15–25 días."],["¿Incluye hosting y dominio?","Podemos incluirlos y configurarlos; los accesos serán tuyos."],["¿Se integra con WhatsApp?","Sí, con botones y mensajes predeterminados."],["¿Podré editar mi web?","Sí, incluimos capacitación en proyectos autoadministrables."]].map((x,i)=><details open={i===0} key={x[0]}><summary>{x[0]} <b>+</b></summary><p>{x[1]}</p></details>)}</aside></section>
+<section className="cta"><label>● EMPECEMOS HOY</label><h2>¿Listo para tener una web<br/>que realmente venda?</h2><p>Convierte tu idea en una experiencia digital que haga crecer tu negocio.</p><a className="btn green" href={wa}>Cotizar por WhatsApp</a></section></main>
+<footer className="sitefoot"><div><a className="brand" href="#inicio"><i>P</i>Páginas Web <b>Piura</b></a><p>Experiencias digitales para negocios del norte del Perú.</p></div><div><b>Servicios</b><a href="#servicios">Landing pages</a><a href="#servicios">Tiendas virtuales</a></div><div><b>Contacto</b><p>Piura, Perú</p><a href={wa}>+51 900 000 000</a></div></footer><a className="float" href={wa}>◌</a></>}
