@@ -27,7 +27,7 @@ export async function generateMetadata({
   const url = `/blog/${post.slug}`;
 
   return {
-    title: `${post.title} | Guía 2026`,
+    title: post.seoTitle,
     description: post.description,
     alternates: { canonical: url },
     openGraph: {
@@ -120,12 +120,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <header className="post-header">
             <p className="post-category">{post.category}</p>
             <h1>{post.title}</h1>
-            <p className="post-intro">
-              Si tienes un negocio en Piura y estás pensando en crear una página
-              web, es normal preguntarte cuánto deberías invertir. El precio
-              varía según el tipo de proyecto, el diseño, las funciones y el
-              objetivo comercial de la web.
-            </p>
+            <p className="post-intro">{post.introduction}</p>
             <div className="post-meta">
               <time dateTime={post.publishedAt}>
                 Publicado: {formatDate(post.publishedAt)}
